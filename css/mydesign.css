@@ -18,6 +18,7 @@ body {
   padding: 0;
 }
 
+
 body {
   background-image: url(../imagenes/back.png);
   -webkit-background-size: cover;
@@ -53,6 +54,7 @@ header {
 
   justify-content: space-between;
 
+  margin-bottom: 0;
   align-items: center;
 
   padding: 30px 70px;
@@ -90,18 +92,65 @@ header {
 }
 
 .content {
-  background: white;
-  width: 50% letter-spacing 2px;
-  padding: 50px;
-  margin: 100px;
-  border-radius: 40px;
+
+  display: flex;
   transition: all 300ms ease in;
   transition: transform 250ms;
 
   
 }
 
+.contentchild { 
+
+  background: white;
+  border-radius: 40px;
+
+  height: auto;
+  width: 60%;
+  align-items: auto;
+  margin: auto;
+  
+  border-radius: 40px;
+  padding: 50px;
+  border-radius:4em;
+
+
+}
+
 .content:hover {
+  transform: translateY(-10px);
+}
+
+
+.content2 {
+ 
+  
+  display: flex;
+  transition: all 300ms ease in;
+  transition: transform 250ms;
+
+}
+
+
+.content2child {
+  background: white;
+  border-radius: 40px;
+
+  height: 700px;
+  width: 50%;
+  align-items: center;
+  margin: auto;  /* Magic! */
+  
+  border-radius: 40px;
+  padding: 50px;
+  border-radius:4em;
+
+
+
+}
+
+
+.content2:hover {
   transform: translateY(-10px);
 }
 
