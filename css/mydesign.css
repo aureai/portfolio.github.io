@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Primer párrafo*/
+
+body {
+  background-color: #ffffff;
+  font-family: "Poppins";
+
+  /* -test */
+}
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+body {
+  background-image: url(../imagenes/back.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  height: 100vh;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-weight: 600;
+
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-flex;
+
+  display: -moz-stack;
+
+  display: -moz-flex;
+
+  display: -ms-flex;
+
+  display: -o-flex;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 30px 70px;
+  transition: all 300ms ease;
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 300ms ease ease-in-out;
+}
+
+
+.nav-area {
+  list-style: none;
+  transition: all 300ms ease ease-in-out;
+}
+
+.nav-area li {
+  display: inline-block;
+
+  padding: 0 15px;
+
+  text-transform: uppercase;
+  transition: all 300ms ease in;
+}
+
+.nav-area li a {
+  transition: 0.3s;
+
+  color: #fff;
+}
+
+.nav-area li a:hover {
+  color: #678d77;
+}
+
+.content {
+  background: white;
+  width: 50% letter-spacing 2px;
+  padding: 50px;
+  margin: 100px;
+  border-radius: 40px;
+  transition: all 300ms ease in;
+  transition: transform 250ms;
+
+  
+}
+
+.content:hover {
+  transform: translateY(-10px);
+}
+
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 40px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  
+
+}
+
+
+
+/* -test */

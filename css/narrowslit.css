@@ -1,0 +1,241 @@
+.narrowslit-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+/*
+    Just a placeholder for this demo, its only purple is to only center things to the center of the browser.
+*/
+/*
+
+*/
+.labelcontent {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*using your default installed fonts that is brought by microsoft*/
+}
+.maincontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100%);
+    height: 400px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    /*
+        this margin right here is the trick to make it "expand" both in width and height axis. Every card is given 10px margin by default.
+
+        and when it is "active", it will put the margin to 0 only on the active card which expands the active card.
+
+        try putting it on 0, every card will look a like in height and cramped with each other as there is no margin seperating them and squishing them.
+
+        might as well try increasing the value, customize to your likings :D
+    */
+    background: var(--backgroundOverwrite, var(--defaultBackground, #e6e9ed));
+    /*
+        main background, doesn't load?, a grey whitish background fallback.
+        main background doesn't exist?, default color.
+    */
+    background-size: auto 120%;
+    /*
+        creates the "zoom out" effect when active.
+    */
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(.04,.35,0,1.02);
+}
+.card:nth-child(1) {
+    --defaultBackground: #ed5565;
+    --backgroundOverwrite: url('../imagenes/personal/pj1.jpg')
+    /*
+        these are just backdrop backgrounds, in case the image fails to load, it will display these solid colors.
+
+        these are stored as variables, which is the "--andthevariablename"
+        which then will be read by the ".card" specifier above.
+    */
+}
+.card:nth-child(2) {
+    --defaultBackground: #fc6e51;
+    --backgroundOverwrite: url('../imagenes/personal/pj2.jpg')
+}
+.card:nth-child(3) {
+    --defaultBackground: #ffce54;
+    --backgroundOverwrite: url('../imagenes/personal/pj3.jpg')
+}
+.card:nth-child(4) {
+    --defaultBackground: #2ecc71;
+    --backgroundOverwrite: url('../imagenes/other/concept.gif')
+}
+.card:nth-child(5) {
+    --defaultBackground: #5d9cec; 
+    --backgroundOverwrite: url('../imagenes/other/hksilkmoth.jpg')
+    /*Background doesn't exist*/
+}
+/*
+    :nth-child() is a selector which literally just to specify an element in the entire DOM in a top to bottom order
+
+    in this example, they used ".cards", it will read the entire dom from top to bottom with the class ".cards", there is 5 ".card" classes.
+
+    .card:nth-child(1) means the first ".card" class
+    .card:nth-child(2) means the second ".card" class
+    .card:nth-child(3) means the third ".card" class
+    and so on...
+    (look over to the html to see the correlation)
+
+    look here for more indepth:
+    https://www.w3schools.com/cssref/sel_nth-child.asp
+*/
+
+.card:not(.active) {
+    /*
+        when NOT active, the card is shrinked. Border radius is also slightly decreased.
+    */
+    flex-grow: 1;
+    border-radius: 30px;
+}
+.card.active {
+    /*
+        when active, the card is expanded. Border radius is increased.
+    */
+    flex-grow: 100;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    /*
+        Margin is set to 0 to expand the card.
+    */
+    border-radius: 40px;
+    background-size: auto 100%;
+    /*
+        [flex-grow]
+        In every flex box, a space is partitioned for every element inside it. What this does is specify the size of partition excluding the others.
+    
+        try putting 1, every each of them will look a like. because it's equal to the others.
+    
+        the reason it's on absurdly big number is just to maximize the 'expansion' of the card when active.
+    
+        look here for more indepth:
+        https://www.w3schools.com/cssref/css3_pr_flex-grow.asp
+    
+        example:
+         https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_flex-grow
+    */
+}
+
+
+.card:not(.active) .labelbackdrop {
+    /*
+        when NOT active, the label backdrop fades out. And a 40px (downward) translate to make a slight downward animation when it's clicked away.
+    */
+    transform: translateY(40px);
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+    opacity: 0;
+}
+.card.active .labelbackdrop {
+    /*
+        when active, the label backdrop (that darkening thing) fades in and resets the translation transformation which animates it back upward.
+    */
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+    transform: translateY(0px);
+    opacity: 1;
+}
+.card:not(.active) .labelcontainer {
+    /*
+        when NOT active, the label container is pulled back downwards to match the others.
+    */
+    bottom: 10px;
+    left: 10px;
+}
+.card.active .labelcontainer {
+    /*
+        when active, the label container pushed upward by 10px
+    */
+    bottom: 20px;
+    left: 20px;
+}
+.card:not(.active) .labelcontent > div {
+    /*
+        when NOT active, the label content is pushed 20px from the left to animate it going to the right
+    */
+    left: 20px;
+    opacity: 0;
+}
+.card.active .labelcontent > div {
+    /*
+        when active, the label content fades in and pulled back to the left.
+    */
+    left: 0px;
+    opacity: 1;
+}
+/*
+    :not() is a "NOT" boolean. All it says is 
+    "if .this class is NOT with a (.certain-class), make it like look like this."
+*/
+/*
+    [EXTRA]
+    top, bottom, left, right =/= margins (margin-top,bottom,left,right)
+    
+    they are as simple as they sound:
+
+    top: 10px; means put it on top and add 10 px of space from the top
+    bottom: 10px; means put it on the bottom and add 10 px of space from the bottom
+
+    left, right; you get the idea.
+*/
+.card .labelbackdrop {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.card .labelcontainer {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.card .labelcontainer .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+    /*
+        uses the default colors.
+    */
+}
+.labelcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+}
+.labelcontent > div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+.labeltitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.sub {
+    transition-delay: 0.1s;
+}
