@@ -54,22 +54,24 @@ header {
 
   justify-content: space-between;
 
-  margin-bottom: 0;
+  margin-bottom: 3%;
   align-items: center;
 
   padding: 30px 70px;
-  transition: all 300ms ease;
+  transition: all 1000ms ease;
+  
 }
 
 .logo {
   cursor: pointer;
-  transition: all 300ms ease ease-in-out;
+  transition: all 1000ms ease ease-in-out;
 }
 
 
 .nav-area {
   list-style: none;
   transition: all 300ms ease ease-in-out;
+  
 }
 
 .nav-area li {
@@ -79,10 +81,12 @@ header {
 
   text-transform: uppercase;
   transition: all 300ms ease in;
+  
 }
 
 .nav-area li a {
   transition: 0.3s;
+  
 
   color: #fff;
 }
@@ -94,8 +98,8 @@ header {
 .content {
 
   display: flex;
-  transition: all 300ms ease in;
-  transition: transform 250ms;
+  
+  
 
   
 }
@@ -110,15 +114,28 @@ header {
   align-items: auto;
   margin: auto;
   
+  
   border-radius: 40px;
   padding: 50px;
   border-radius:4em;
+  transition: all 300ms ease-in-out;
+  transition: transform 250ms;
+  margin-bottom: -10%;
+  
 
 
 }
 
-.content:hover {
+.contentchild p {
+
+  font-weight: 100;
+
+}
+
+.contentchild:hover {
   transform: translateY(-10px);
+  transition: all 300ms ease-in-out;
+  transition: transform 250ms;
 }
 
 
@@ -126,31 +143,44 @@ header {
  
   
   display: flex;
-  transition: all 300ms ease in;
-  transition: transform 250ms;
+  justify-content: center;
+  margin: 0 5px;
+  margin-top: 20px;
+ 
 
 }
 
 
 .content2child {
+
+  margin-top: 20px;
   background: white;
   border-radius: 40px;
 
-  height: 700px;
+  height: auto;
   width: 50%;
   align-items: center;
-  margin: auto;  /* Magic! */
+  margin:0 -5px; 
   
   border-radius: 40px;
   padding: 50px;
   border-radius:4em;
+  margin-bottom: 5%;
+  margin-top: -2%;
+
+
+
+  transition: all 300ms ease in;
+  transition: transform 250ms;
 
 
 
 }
 
 
-.content2:hover {
+
+
+.content2child:hover {
   transform: translateY(-10px);
 }
 
@@ -188,6 +218,7 @@ input[type=submit]:hover {
   border-radius: 40px;
   background-color: #f2f2f2;
   padding: 20px;
+  
   
 
 }
