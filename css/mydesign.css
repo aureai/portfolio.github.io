@@ -8,6 +8,8 @@ z
 body {
 background-color: #ffffff;
   font-family: "Poppins";
+  
+  
   /* -test */
 
 }
@@ -29,76 +31,60 @@ body {
  font-size: 16px;
 }
 
-a {
- text-decoration: none;
+*{  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;            
 }
 
-header {
- display: -moz-stack;
- display: -moz-flex;
- display: -ms-flex;
- display: -o-flex;
- display: flex;
- justify-content: auto;
- margin-bottom: 3%;
- align-items: center;
- padding: 30px 70px;
- transition: all 1000ms ease;
+a{
+  text-decoration: none;
 }
-
-.logo {
- cursor: pointer;
- transition: all 1000ms ease ease-in-out;
+header{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 70px;
 }
-
-.nav-area {
- list-style: none;
- transition: all 300ms ease ease-in-out;
+.logo{
+  cursor: pointer;
 }
-
-.nav-area li {
- display: inline-block;
- padding: 0 15px;
-
- text-transform: uppercase;
- transition: all 300ms ease in;
+.nav-area{
+  list-style: none;
 }
-
-.nav-area li a {
- transition: 0.3s;
- color: #fff;
+.nav-area li{
+  display: inline-block;
+  display: flexbox;
+  padding: 0 15px;
+  text-transform: uppercase;
 }
-
-.nav-area li a:hover {
- color: #678d77;
+.nav-area li a{
+  transition: all .3s ease 0s;
+  color: #fff;
 }
-
-.btn-area{
-  transform: translateY(-10px) ease-in-out;
-  animation-delay: 2s;
-  cursor:pointer;
-  color:#fff;
-  font-size: 16;
+.nav-area li a:hover{
+  color: #678d77;
+}
+.btn-area {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 10px 30px;
   border-radius: 40px;
-  transition: all 300ms ease in;
-  background-color: #678d77;
-
+  background: #678d77;     
+  transition: all .3s ease 0s;      
 }
 
 .btn-area:hover {
 
-  
-  color: #37473e;
-  transition: ease-in-out 0.3s;
-  
-}
+  color: #425349; 
 
-
-.content {
- display: flex;
 }
 
 .contentchild {
@@ -107,7 +93,6 @@ header {
  height: auto;
  width: 60%;
  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.24);
- align-items: auto;
  margin: auto;
  border-radius: 40px;
  padding: 50px;
@@ -132,6 +117,7 @@ header {
  justify-content: center;
  margin: auto;
  margin-top: auto;
+ 
 }
 
 .content2child {
@@ -142,6 +128,8 @@ header {
  width: 50%;
  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.24);
  align-items: center;
+   justify-content: center;
+
  margin: 0 -5px;
  border-radius: 40px;
  padding: 50px;
@@ -281,14 +269,18 @@ input[type=submit]:hover {
 .wrapper {
  display: flex;
  margin:auto;
-margin-bottom: +5%;
-margin-top: -2%;
+margin-bottom: auto;
+margin-top: auto;
 width: 65%;
 
 }
 
+.wrapper p{
+
+  font-weight: 100;
+}
 .card {
-  width: 280px;
+  width: 180px;
   height: 360px;
   border-radius: 15px;
   padding: 1.5rem;
@@ -297,7 +289,7 @@ width: 65%;
   display: flex;
   align-items: flex-end;
   transition: 0.4s ease-out;
-  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.5);
 }
 .card:hover {
   transform: translateY(5px);
