@@ -4,7 +4,7 @@
 
 
 /*Primer párrafo*/
-z
+
 body {
 background-color: #ffffff;
   font-family: "Poppins";
@@ -18,11 +18,14 @@ background-color: #ffffff;
  box-sizing: border-box;
  margin: auto;
  padding: auto;
+ 
 }
 
 body {
  background-image: url(../imagenes/back.png);
  background-size: cover;
+ align-items: center;
+ justify-content: center;
  background-position: center center;
  background-attachment: fixed;
  height: 100vh;
@@ -342,3 +345,113 @@ width: 65%;
   margin-top: 8px;
 }
 
+
+/* */
+
+
+.text-box{
+  position: relative;
+  background: #fff;
+  width: 800px;
+  
+  margin: 10px;
+  padding: 0 20px 20px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgb(1 1 1 / 10%);
+}
+
+.text-box .top-area{
+  display: flex;
+  justify-content: space-between;
+  align-items:  relative;
+  margin: 20px 0;
+}
+
+
+.text-box textarea{
+  width: 100%;
+  min-height: 450px;
+  font-size: 1em;
+  padding: 10px;
+  outline: none;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #009FEF;
+}
+      
+
+/* */
+
+.slider{
+  width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 800px;
+  height: 450px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid #40D3DC;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #40D3DC;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+
+      
