@@ -1,10 +1,17 @@
 /* */
 
-.slider{
-    width: 800px;
-    height: 450px;
+.slidermain {
+
+    width: 100%;
     border-radius: 10px;
+}
+
+.slider{
+    width: 100%;
     overflow: hidden;
+    justify-content: center;
+    margin: auto;
+    margin-top: auto;
   }
   
   .slides{
@@ -25,6 +32,7 @@
   .slide img{
     width: 800px;
     height: 450px;
+    
   }
   
   /*css for manual slide navigation*/
