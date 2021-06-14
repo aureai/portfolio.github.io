@@ -3,7 +3,7 @@
 /* CSS Document */
 
 
-/*Primer párrafo*/
+/*Primer p&aacute;rrafo*/
 
 body {
   background-image: url(../imagenes/back.jpg);
@@ -421,4 +421,28 @@ input[type=submit]:hover {
   font-weight: 100;
   margin-bottom: 20px;
   color: #666;
+  
 }
+
+.container2 p::after {
+
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
+/*Ancla*/
+
+.ancla { 
+color: #FFF;
+
+}
+
+
+/* */
+
+
